@@ -1,3 +1,48 @@
-body {
-    background-color: deepskyblue;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 4rem;
+  background-color: seagreen;
+}
+
+#parent {
+  margin: 0;
+  padding: 0;
+}
+
+#kennel {
+  height: auto;
+  background-color: ivory;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+    width: 280px;
+    padding: 10px;
+}
+
+.dinosaur {
+    border: 2px solid #688052;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+#hospital {
+  height: auto;
+  background-color: palevioletred;
+}
+
+#grave-yard {
+  height: auto;
+  background-color: slategray;
 }
