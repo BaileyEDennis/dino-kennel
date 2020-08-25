@@ -111,9 +111,18 @@ const buildKennelCards = () => {
       domString += `<div class="dinosaur">`;
       domString += `<h2>${dinos[i].name}</h2>`;
       domString += `<img src=${dinos[i].imageUrl} alt="pet image"/>`;
-      domString += `<p>${dinos[i].owner}</p>`;
-      domString += `<p class="special-skill">${dinos[i].health}</p>`;
-      domString += `<footer>${dinos[i].type}</footer>`;
+      domString += `<p>OWNER: ${dinos[i].owner}</p>`;
+      domString += `<p>AGE: ${dinos[i].age}</p>`;
+      domString += `<div class="progress">`;
+      domString += `<div class="progress-bar bg-success" role="progressbar" style="width: ${dinos[i].health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dinos[i].health}`;
+      domString += `</div>`;
+      domString += `</div>`;
+      domString += `<button type="button" class="btn btn-primary">Adventure!</button>`;
+      domString += `<button type="button" class="btn btn-success">Feed!</button>`;
+      domString += `<button type="button" class="btn btn-danger">Remove!</button>`;
+      domString += `<button type="button" class="btn btn-warning">Pet!</button>`;
+      domString += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString += `<footer>TYPE: ${dinos[i].type}</footer>`;
       domString += `</div>`;
     }
   }
@@ -121,38 +130,55 @@ const buildKennelCards = () => {
 };
 
 const buildHospitalCards = () => {
-    let domString = "";
-  
-    for (let i = 0; i < dinos.length; i++) {
-      if (dinos[i].health > 0 && dinos[i].health < 30) {
-        domString += `<div class="dinosaur">`;
-        domString += `<h2>${dinos[i].name}</h2>`;
-        domString += `<img src=${dinos[i].imageUrl} alt="pet image"/>`;
-        domString += `<p>${dinos[i].owner}</p>`;
-        domString += `<p class="special-skill">${dinos[i].health}</p>`;
-        domString += `<footer>${dinos[i].type}</footer>`;
-        domString += `</div>`;
-      }
+  let domString = "";
+
+  for (let i = 0; i < dinos.length; i++) {
+    if (dinos[i].health > 0 && dinos[i].health < 30) {
+      domString += `<div class="dinosaur">`;
+      domString += `<h2>${dinos[i].name}</h2>`;
+      domString += `<img src=${dinos[i].imageUrl} alt="pet image"/>`;
+      domString += `<p>OWNER: ${dinos[i].owner}</p>`;
+      domString += `<p>AGE: ${dinos[i].age}</p>`;
+      domString += `<div class="progress">`;
+      domString += `<div class="progress-bar bg-warning" role="progressbar" style="width: ${dinos[i].health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dinos[i].health}`;
+      domString += `</div>`;
+      domString += `</div>`;
+      domString += `<button type="button" class="btn btn-primary">Adventure!</button>`;
+      domString += `<button type="button" class="btn btn-success">Feed!</button>`;
+      domString += `<button type="button" class="btn btn-danger">Remove!</button>`;
+      domString += `<button type="button" class="btn btn-warning">Pet!</button>`;
+      domString += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString += `<footer>TYPE: ${dinos[i].type}</footer>`;
+      domString += `</div>`;
     }
-    printToDom("hospitalCards", domString);
-  };
+  }
+  printToDom("hospitalCards", domString);
+};
 
 const buildGraveCards = () => {
-    let domString = "";
-  
-    for (let i = 0; i < dinos.length; i++) {
-      if (dinos[i].health === 0) {
-        domString += `<div class="dinosaur">`;
-        domString += `<h2>${dinos[i].name}</h2>`;
-        domString += `<img src=${dinos[i].imageUrl} alt="pet image"/>`;
-        domString += `<p>${dinos[i].owner}</p>`;
-        domString += `<p class="special-skill">${dinos[i].health}</p>`;
-        domString += `<footer>${dinos[i].type}</footer>`;
-        domString += `</div>`;
-      }
+  let domString = "";
+
+  for (let i = 0; i < dinos.length; i++) {
+    if (dinos[i].health === 0) {
+      domString += `<div class="dinosaur">`;
+      domString += `<h2>${dinos[i].name}</h2>`;
+      domString += `<img src=${dinos[i].imageUrl} alt="pet image"/>`;
+      domString += `<p>OWNER: ${dinos[i].owner}</p>`;
+      domString += `<p>AGE: ${dinos[i].age}</p>`;
+      domString += `<div>`;
+      domString += `<span>&#9760;</span>`;
+      domString += `</div>`;
+      domString += `<button type="button" class="btn btn-outline-primary">Adventure!</button>`;
+      domString += `<button type="button" class="btn btn-outline-success">Feed!</button>`;
+      domString += `<button type="button" class="btn btn-danger">Remove!</button>`;
+      domString += `<button type="button" class="btn btn-outline-warning">Pet!</button>`;
+      domString += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString += `<footer>${dinos[i].type}</footer>`;
+      domString += `</div>`;
     }
-    printToDom("graveCards", domString);
-  };
+  }
+  printToDom("graveCards", domString);
+};
 
 const init = () => {
   buildKennelCards();
