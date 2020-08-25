@@ -18,6 +18,10 @@ header {
   background-color: ivory;
 }
 
+.progress-bar {
+    color: black;
+}
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -27,6 +31,16 @@ header {
 img {
     width: 280px;
     padding: 10px;
+}
+
+h2 {
+    background-color: lightblue;
+}
+
+footer {
+    display: flex;
+    background-color: lightgreen;
+    flex-shrink: 0;
 }
 
 .dinosaur {
