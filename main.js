@@ -193,6 +193,8 @@ const buildCards = () => {
       domString3 += `</div>`;
       printToDom("graveCards", domString3);
     }
+
+    cardButtons(dinos[i].id);
   }
 };
 
@@ -235,12 +237,12 @@ const getFormData = () => {
 };
 
 // DINO BUTTON EVENTS
-const cardButtons = (ghoti) => {
-  $(`#feed${ghoti.id}`).on('click', () => {
-    console.log('clicked');
-  })
-};
+const cardButtons = (id) => {
 
+  $(`#feed${id}`).on("click", () => {
+    console.log("clicked ", `feed${id}`);
+  });
+};
 
 // INIT FUNCTION
 const init = () => {
@@ -249,7 +251,6 @@ const init = () => {
   document
     .getElementById("submitButton")
     .addEventListener("click", getFormData);
-  cardButtons(dinos);
 };
 
 init();
