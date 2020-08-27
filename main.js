@@ -1,3 +1,5 @@
+// TODO: Figure out how to target ID"s Created by DOM loop.
+
 const dinos = [
   {
     id: "dino1",
@@ -145,11 +147,11 @@ const buildCards = () => {
       domString += `<div class="progress-bar bg-success" role="progressbar" style="width: ${dinos[i].health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dinos[i].health}`;
       domString += `</div>`;
       domString += `</div>`;
-      domString += `<button type="button" class="btn btn-primary">Adventure!</button>`;
-      domString += `<button type="button" class="btn btn-success">Feed!</button>`;
-      domString += `<button type="button" class="btn btn-danger">Remove!</button>`;
-      domString += `<button type="button" class="btn btn-warning">Pet!</button>`;
-      domString += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString += `<button type="button" class="btn btn-primary" id="adventure${dinos[i].id}">Adventure!</button>`;
+      domString += `<button type="button" class="btn btn-success" id="feed${dinos[i].id}">Feed!</button>`;
+      domString += `<button type="button" class="btn btn-danger" id="remove${dinos[i].id}">Remove!</button>`;
+      domString += `<button type="button" class="btn btn-warning" id="pet${dinos[i].id}">Pet!</button>`;
+      domString += `<button type="button" class="btn btn-info" id="info${dinos[i].id}">Info!</button>`;
       domString += `<footer>TYPE: ${dinos[i].type}</footer>`;
       domString += `</div>`;
       printToDom("kennelCards", domString);
@@ -164,11 +166,11 @@ const buildCards = () => {
       domString2 += `<div class="progress-bar bg-warning" role="progressbar" style="width: ${dinos[i].health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dinos[i].health}`;
       domString2 += `</div>`;
       domString2 += `</div>`;
-      domString2 += `<button type="button" class="btn btn-primary">Adventure!</button>`;
-      domString2 += `<button type="button" class="btn btn-success">Feed!</button>`;
-      domString2 += `<button type="button" class="btn btn-danger">Remove!</button>`;
-      domString2 += `<button type="button" class="btn btn-warning">Pet!</button>`;
-      domString2 += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString2 += `<button type="button" class="btn btn-primary" id="adventure${dinos[i].id}">Adventure!</button>`;
+      domString2 += `<button type="button" class="btn btn-success" id="feed${dinos[i].id}">Feed!</button>`;
+      domString2 += `<button type="button" class="btn btn-danger"id="remove${dinos[i].id}">Remove!</button>`;
+      domString2 += `<button type="button" class="btn btn-warning" id="pet${dinos[i].id}">Pet!</button>`;
+      domString2 += `<button type="button" class="btn btn-info" id="info${dinos[i].id}">Info!</button>`;
       domString2 += `<footer>TYPE: ${dinos[i].type}</footer>`;
       domString2 += `</div>`;
       printToDom("hospitalCards", domString2);
@@ -182,11 +184,11 @@ const buildCards = () => {
       domString3 += `<div>`;
       domString3 += `<span>&#9760;</span>`;
       domString3 += `</div>`;
-      domString3 += `<button type="button" class="btn btn-outline-primary">Adventure!</button>`;
-      domString3 += `<button type="button" class="btn btn-outline-success">Feed!</button>`;
-      domString3 += `<button type="button" class="btn btn-danger">Remove!</button>`;
-      domString3 += `<button type="button" class="btn btn-outline-warning">Pet!</button>`;
-      domString3 += `<button type="button" class="btn btn-info">Info!</button>`;
+      domString3 += `<button type="button" class="btn btn-primary" disabled>Adventure!</button>`;
+      domString3 += `<button type="button" class="btn btn-success" disabled>Feed!</button>`;
+      domString3 += `<button type="button" class="btn btn-danger" id="remove${dinos[i].id}">Remove!</button>`;
+      domString3 += `<button type="button" class="btn btn-warning" disabled>Pet!</button>`;
+      domString3 += `<button type="button" class="btn btn-info" id="info${dinos[i].id}">Info!</button>`;
       domString3 += `<footer>TYPE: ${dinos[i].type}</footer>`;
       domString3 += `</div>`;
       printToDom("graveCards", domString3);
@@ -232,6 +234,14 @@ const getFormData = () => {
   $("#newDinoPic").val("");
 };
 
+// DINO BUTTON EVENTS
+const cardButtons = (ghoti) => {
+  $(`#feed${ghoti.id}`).on('click', () => {
+    console.log('clicked');
+  })
+};
+
+
 // INIT FUNCTION
 const init = () => {
   buildForm();
@@ -239,6 +249,7 @@ const init = () => {
   document
     .getElementById("submitButton")
     .addEventListener("click", getFormData);
+  cardButtons(dinos);
 };
 
 init();
