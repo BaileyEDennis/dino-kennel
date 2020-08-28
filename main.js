@@ -98,34 +98,34 @@ const dinos = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOdrC7hlvBawFQ7g8vgwHcfQphX5WfeN2bth0dvc4M2oxNGdSD",
   },
 ];
-// // FORM
-// const buildForm = () => {
-//   let domString = "";
-//   domString += `<form>`;
-//   domString += `<div class="form-group">`;
-//   domString += `<label for="exampleInputEmail1">Name</label>`;
-//   domString += `<input type="text" class="form-control" id="newDinoName" aria-describedby="emailHelp" placeholder="Enter name">`;
-//   domString += `</div>`;
-//   domString += `<div class="form-group">`;
-//   domString += `<label for="exampleInputPassword1">Age</label>`;
-//   domString += `<input type="text" class="form-control" id="newDinoAge" placeholder="Enter age">`;
-//   domString += `</div>`;
-//   domString += `<div class="form-group">`;
-//   domString += `<label for="exampleInputEmail1">Owner</label>`;
-//   domString += `<input type="text" class="form-control" id="newDinoOwner" aria-describedby="emailHelp" placeholder="Enter owner">`;
-//   domString += `</div>`;
-//   domString += `</form>`;
-//   domString += `<div class="form-group">`;
-//   domString += `<label for="exampleInputEmail1">Type</label>`;
-//   domString += `<input type="text" class="form-control" id="newDinoType" aria-describedby="emailHelp" placeholder="Enter type">`;
-//   domString += `</div>`;
-//   domString += `<div class="form-group">`;
-//   domString += `<label for="exampleInputEmail1">Image</label>`;
-//   domString += `<input type="text" class="form-control" id="newDinoPic" aria-describedby="emailHelp" placeholder="Enter image url">`;
-//   domString += `</div>`;
-//   domString += `<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>`;
-//   printToDom("formHere", domString);
-// };
+// FORM
+const buildForm = () => {
+  let domString = "";
+  domString += `<form>`;
+  domString += `<div class="form-group">`;
+  domString += `<label for="exampleInputEmail1">Name</label>`;
+  domString += `<input type="text" class="form-control" id="newDinoName" aria-describedby="emailHelp" placeholder="Enter name">`;
+  domString += `</div>`;
+  domString += `<div class="form-group">`;
+  domString += `<label for="exampleInputPassword1">Age</label>`;
+  domString += `<input type="text" class="form-control" id="newDinoAge" placeholder="Enter age">`;
+  domString += `</div>`;
+  domString += `<div class="form-group">`;
+  domString += `<label for="exampleInputEmail1">Owner</label>`;
+  domString += `<input type="text" class="form-control" id="newDinoOwner" aria-describedby="emailHelp" placeholder="Enter owner">`;
+  domString += `</div>`;
+  domString += `</form>`;
+  domString += `<div class="form-group">`;
+  domString += `<label for="exampleInputEmail1">Type</label>`;
+  domString += `<input type="text" class="form-control" id="newDinoType" aria-describedby="emailHelp" placeholder="Enter type">`;
+  domString += `</div>`;
+  domString += `<div class="form-group">`;
+  domString += `<label for="exampleInputEmail1">Image</label>`;
+  domString += `<input type="text" class="form-control" id="newDinoPic" aria-describedby="emailHelp" placeholder="Enter image url">`;
+  domString += `</div>`;
+  domString += `<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>`;
+  printToDom("formHere", domString);
+};
 // BUILDING THE CARDS
 const buildCards = () => {
   $("#kennelCards").html("");
@@ -149,7 +149,6 @@ const buildCards = () => {
        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
        <footer>TYPE: ${dino.type}</footer>
        </div>`);
-      // printToDom("kennelCards", domString);
       cardButtons(dino.id);
       // CREATE A FUNCTION THAT RENDERS MODAL TO DOM
       // GIVE THAT MODAL ID = info${dino.id}
@@ -177,7 +176,6 @@ const buildCards = () => {
        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
        <footer>TYPE: ${dino.type}</footer>
        </div>`);
-      // printToDom("kennelCards", domString);
       cardButtons(dino.id);
       // CREATE A FUNCTION THAT RENDERS MODAL TO DOM
       // GIVE THAT MODAL ID = info${dino.id}
@@ -205,14 +203,12 @@ const buildCards = () => {
        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
        <footer>TYPE: ${dino.type}</footer>
        </div>`);
-      // printToDom("kennelCards", domString);
       cardButtons(dino.id);
       // CREATE A FUNCTION THAT RENDERS MODAL TO DOM
       // GIVE THAT MODAL ID = info${dino.id}
       createModal(dino.id);
     }
   });
-  
 };
 // PRINT TO DOM FUNCTION
 const printToDom = (divID, textToPrint) => {
@@ -258,7 +254,14 @@ const cardButtons = (id) => {
     mydino.health += 1;
     buildCards();
   });
+  $(`#remove${id}`).on("click", () => {
+    let mydino = dinos.find((c) => c.id === id);
+    dinos.splice(dinos, 1);
+    $(`remove${id}`).remove();
+    buildCards();
+  });
 };
+
 const createModal = (id) => {
   $("#kennel").append(`
     <div class="modal fade" id="info${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -286,10 +289,10 @@ const createModal = (id) => {
 };
 // INIT FUNCTION
 const init = () => {
-  //   buildForm();
+  buildForm();
   buildCards();
-  //   document
-  //     .getElementById("submitButton")
-  //     .addEventListener("click", getFormData);
+  document
+    .getElementById("submitButton")
+    .addEventListener("click", getFormData);
 };
 init();
