@@ -10,7 +10,6 @@ const buildCards = () => {
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
          <p>AGE: ${dino.age}</p>
-         <p>ID: ${dino.id}</p>
          <div class="progress">
          <div class="progress-bar bg-success" role="progressbar" style="width: ${dino.health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dino.health}
          </div>
@@ -38,7 +37,6 @@ const buildCards = () => {
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
          <p>AGE: ${dino.age}</p>
-         <p>ID: ${dino.id}</p>
          <div class="progress">
          <div class="progress-bar bg-success" role="progressbar" style="width: ${dino.health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dino.health}
          </div>
@@ -66,7 +64,6 @@ const buildCards = () => {
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
          <p>AGE: ${dino.age}</p>
-         <p>ID: ${dino.id}</p>
          <div>
          <div class="skull">
          &#9760
