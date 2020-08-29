@@ -5,7 +5,7 @@ const buildCards = () => {
     dinos.forEach((dino) => {
       if (dino.health >= 30) {
         $("#kennelCards").append(`
-         <div class="dinosaur" id="card${dino.id}">
+         <div class="dinosaur h-100" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
@@ -20,7 +20,7 @@ const buildCards = () => {
          <button type="button" class="btn btn-danger" id="remove${dino.id}">Remove!</button>
          <button type="button" class="btn btn-warning" id="pet${dino.id}">Pet!</button>
          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
-         <footer>TYPE: ${dino.type}</footer>
+         <footer class="card-footer text-muted">TYPE: ${dino.type}</footer>
          </div>`);
         feedButton(dino.id);
         adventureButton(dino.id);
@@ -33,7 +33,7 @@ const buildCards = () => {
     dinos.forEach((dino) => {
       if (dino.health < 30 && dino.health > 0) {
         $("#hospitalCards").append(`
-         <div class="dinosaur" id="card${dino.id}">
+        <div class="dinosaur h-100" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
@@ -48,7 +48,7 @@ const buildCards = () => {
          <button type="button" class="btn btn-danger" id="remove${dino.id}">Remove!</button>
          <button type="button" class="btn btn-warning" id="pet${dino.id}">Pet!</button>
          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
-         <footer>TYPE: ${dino.type}</footer>
+         <footer class="card-footer text-muted">TYPE: ${dino.type}</footer>
          </div>`);
          feedButton(dino.id);
          adventureButton(dino.id);
@@ -61,14 +61,15 @@ const buildCards = () => {
     dinos.forEach((dino) => {
       if (dino.health <= 0) {
         $("#graveCards").append(`
-         <div class="dinosaur" id="card${dino.id}">
+        <div class="dinosaur h-100" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
          <p>AGE: ${dino.age}</p>
          <p>ID: ${dino.id}</p>
-         <div class="progress">
-         <div class="progress-bar bg-success" role="progressbar" style="width: ${dino.health}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Health: ${dino.health}
+         <div>
+         <div class="skull">
+         &#9760
          </div>
          </div>
          <button type="button" class="btn btn-primary" id="adventure${dino.id}" disabled>Adventure!</button>
@@ -76,7 +77,7 @@ const buildCards = () => {
          <button type="button" class="btn btn-danger" id="remove${dino.id}">Remove!</button>
          <button type="button" class="btn btn-warning" id="pet${dino.id}" disabled>Pet!</button>
          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info${dino.id}">Info!</button>
-         <footer>TYPE: ${dino.type}</footer>
+         <footer class="card-footer text-muted">TYPE: ${dino.type}</footer>
          </div>`);
          removeButton(dino.id);
          createModal(dino.id);
