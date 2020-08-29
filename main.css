@@ -8,14 +8,11 @@ header {
   background-color: seagreen;
 }
 
-#parent {
-  margin: 0;
-  padding: 0;
-}
-
-#kennel {
-  height: auto;
-  background-color: ivory;
+.cardsp {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  background:rgba(255,255,255, 0.3);
 }
 
 .progress-bar {
@@ -41,6 +38,7 @@ footer {
     display: flex;
     background-color: lightgreen;
     flex-shrink: 0;
+    margin-top: 15px;
 }
 
 .dinosaur {
@@ -51,12 +49,25 @@ footer {
     background-color: white;
 }
 
+.skull {
+  padding: 15px;
+}
+
+.progress {
+  margin: 15px;
+}
+
+#kennel {
+  height: auto;
+  background-image: url("https://wallpapercave.com/wp/B0Shut1.jpg");
+}
+
 #hospital {
   height: auto;
-  background-color: palevioletred;
+  background-image: url("https://wallpapercave.com/wp/wp3592437.jpg");
 }
 
 #grave-yard {
   height: auto;
-  background-color: slategray;
+  background-image: url("https://wallpapercave.com/wp/wp5833722.jpg");
 }
