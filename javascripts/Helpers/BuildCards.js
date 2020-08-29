@@ -1,9 +1,9 @@
-import { feedButton, petButton, removeButton, adventureButton, createModal } from '../main.js'
+import { feedButton, petButton, removeButton, adventureButton, createModal } from './buttonevents.js'
 import { dinos } from '../Data/dinosaurs.js'
 const buildCards = () => {
     $("#kennelCards").html("");
     dinos.forEach((dino) => {
-      if (dino.health > 30) {
+      if (dino.health >= 30) {
         $("#kennelCards").append(`
          <div class="dinosaur" id="card${dino.id}">
          <h2>${dino.name}</h2>
