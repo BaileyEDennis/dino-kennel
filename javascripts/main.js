@@ -1,4 +1,3 @@
-import { adventures } from './Data/adventures.js'
 import { buildForm } from './Helpers/addform.js'
 import { buildCards } from './Helpers/BuildCards.js'
 import { getFormData } from './Helpers/addform.js'
