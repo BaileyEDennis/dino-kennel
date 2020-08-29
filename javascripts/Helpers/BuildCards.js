@@ -1,11 +1,11 @@
-import { feedButton, petButton, removeButton, adventureButton, createModal } from '../main.js'
+import { feedButton, petButton, removeButton, adventureButton, createModal } from './buttonevents.js'
 import { dinos } from '../Data/dinosaurs.js'
 const buildCards = () => {
     $("#kennelCards").html("");
     dinos.forEach((dino) => {
-      if (dino.health > 30) {
+      if (dino.health >= 30) {
         $("#kennelCards").append(`
-         <div class="dinosaur">
+         <div class="dinosaur" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
@@ -33,7 +33,7 @@ const buildCards = () => {
     dinos.forEach((dino) => {
       if (dino.health < 30 && dino.health > 0) {
         $("#hospitalCards").append(`
-         <div class="dinosaur">
+         <div class="dinosaur" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
@@ -61,7 +61,7 @@ const buildCards = () => {
     dinos.forEach((dino) => {
       if (dino.health <= 0) {
         $("#graveCards").append(`
-         <div class="dinosaur">
+         <div class="dinosaur" id="card${dino.id}">
          <h2>${dino.name}</h2>
          <img src=${dino.imageUrl} alt="pet image"/>
          <p>OWNER: ${dino.owner}</p>
