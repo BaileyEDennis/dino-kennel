@@ -31,7 +31,8 @@ https://optimistic-golick-3749f3.netlify.app/
 
 ## Code Example
 
-<addr>const feedButton = (id) => {
+```javascript
+const feedButton = (id) => {
   $(`#feed${id}`).on("click", () => {
     let mydino = dinos.find((c) => c.id === id);
     mydino.health += 10;
@@ -44,4 +45,5 @@ const petButton = (id) => {
     mydino.health += 1;
     buildCards();
   });
-}</addr>
+}
+```
