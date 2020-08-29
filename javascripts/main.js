@@ -31,10 +31,7 @@ const petButton = (id) => {
 }
 const removeButton = (id) => {
   $(`#remove${id}`).on("click", () => {
-    let mydino = dinos.find((c) => c.id === id);
-    dinos.splice(dinos, 1);
-    $(`remove${id}`).remove();
-    buildCards();
+    $(`#card${id}`).remove();
   });
 }
 const adventureButton = (id) => {
@@ -59,19 +56,19 @@ const createModal = (id) => {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="advInfo">
+        <div class="modal-body" id="quest${id}">
         </div>
       </div>
     </div>
   </div>
     `);
   mydino.adventures.forEach((adv) => {
-    $('#advInfo').append(` <tr>
+    $(`#quest${id}`).append(`
+          <tr>
           <th class="date" scope="row">${Date()}</th>
           <th class="activity" scope="row">${adv.title}</th>
          </tr>`);
   });
-  
 };
 
 // INIT FUNCTION
