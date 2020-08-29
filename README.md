@@ -1,14 +1,14 @@
 # dino-kennel
 
 This challenge was our first milestone project at NSS. The project was designed to test the skills we had learned up to this point in the course and get a feel for where we stood. The requirements for the site are as follows:
--Healthy dinos show in the kennel
--Sick dinos show in the hospital
--Dead dinos show in the graveyard
--Dinos can be fed
--Dinos can be petted
--Dinos can be removed from the kennel
--Dinos can be sent on an adventure
--You can add your own dino.
+- Healthy dinos show in the kennel
+- Sick dinos show in the hospital
+- Dead dinos show in the graveyard
+- Dinos can be fed
+- Dinos can be petted
+- Dinos can be removed from the kennel
+- Dinos can be sent on an adventure
+- You can add your own dino.
 
 ## Screenshot
 
@@ -26,8 +26,8 @@ https://optimistic-golick-3749f3.netlify.app/
 
 ## Technology Used
 
--Javascript ES6
--Jquery 3.5
+- Javascript ES6
+- Jquery 3.5
 
 ## Code Example
 
