@@ -1,3 +1,73 @@
-body {
-    background-color: dimgray;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: auto;
+  background-color: seagreen;
+}
+
+.cardsp {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  background:rgba(255,255,255, 0.3);
+}
+
+.progress-bar {
+    color: black;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+    width: 280px;
+    padding: 10px;
+}
+
+h2 {
+    background-color: lightblue;
+}
+
+footer {
+    display: flex;
+    background-color: lightgreen;
+    flex-shrink: 0;
+    margin-top: 15px;
+}
+
+.dinosaur {
+    border: 2px solid #688052;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.skull {
+  padding: 15px;
+}
+
+.progress {
+  margin: 15px;
+}
+
+#kennel {
+  height: auto;
+  background-image: url("https://wallpapercave.com/wp/B0Shut1.jpg");
+}
+
+#hospital {
+  height: auto;
+  background-image: url("https://wallpapercave.com/wp/wp3592437.jpg");
+}
+
+#grave-yard {
+  height: auto;
+  background-image: url("https://wallpapercave.com/wp/wp5833722.jpg");
 }
